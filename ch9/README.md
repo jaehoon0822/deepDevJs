@@ -9,9 +9,9 @@
 >
 
 ```javascript
-	let num = 100;
-	let str = String( num ); // or num.toString() 
-	console.log( typeof str ); // "string"
+let num = 100;
+let str = String( num ); // or num.toString() 
+console.log( typeof str ); // "string"
 ```
 
 <br />
@@ -21,10 +21,10 @@
 >
 
 ```javascript
-	let num = 100;
-	let str = "이다!";
-	let numStr = num + str;
-	console.log( typeof str, ': ', numStr ); // "string: 100이다!"
+let num = 100;
+let str = "이다!";
+let numStr = num + str;
+console.log( typeof str, ': ', numStr ); // "string: 100이다!"
 ```
    
 <br />
