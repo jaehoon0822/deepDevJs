@@ -95,16 +95,22 @@ obj.last-name; // 이때 NODE 와 브라우저의 동작방식은?
 <br />
 
 ### 프로퍼티의 축약 표현
+
 <br />
+
 ```javascript
 let first = 'Luke';
 let last = 'Skywalker';
 
 const hero = { first, last }; // { first: 'Luke', last: 'Skywalker' }
 ```
+
 <br />
+
 ### 계산된 프로퍼티 이름
+
 <br />
+
 ```javascript
 let prefix = 'X_wing';
 let num = 0;
@@ -117,8 +123,11 @@ const spaceShip = {
 
 console.log( `인컴 ${spaceShip.X_wing_2} 은 Death_Star 를 파괴한 전투기다.` ); // 인컴 T-65 는 Death_Star 를 파괴한 전투기다.
 ```
+
 <br />
+
 ### 메서드 축약 표현
+
 <br />
 
 ```javascript
