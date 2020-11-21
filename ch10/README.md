@@ -88,7 +88,7 @@ obj.last-name; // 이때 NODE 와 브라우저의 동작방식은?
 	name 값이 'Luke' 이므로, undefiend - 'Luke' 의 빼기연산을 하기 때문이다.
 >
 
-<br \>
+<br />
 
 ## ES6 에서 추가된 객체 리터럴의 확장 기능
 
