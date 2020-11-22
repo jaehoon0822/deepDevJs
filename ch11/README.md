@@ -41,7 +41,6 @@
 
 > ***" javascript 에서는 문자열을 원시타입으로 처리한다. "***   
 ***" C 에서는 하나의 문자를 위한 데이터 타입( char ) 만 있을 뿐 문자열 타입은 존재하지 않는다. ... JAVA 에서는 문자열을 String 객체로 처리한다. "***		
-   
 	자바스크립트는 따로 타입 키워드가 존재하지 않는다. 그러므로 자동 형변환을 지원한다.   
 	자바스크립트는 문자열에 대해서도 원시타입을 지원하며, 문자열 원시 타입은 하나의 데이터로써 취급된다.   
 	이 말은 문자열을 하나의 데이터 취급하므로, 문자열을 메모리에 저장하기 위해 타입검사 평가후 문자열의 byte 에 맞는 메모리 공간을 만들어 낸후   
@@ -84,19 +83,19 @@ constructor: myString,
 
 let str = new myString("StarWars");
 console.log( str ); /*
-											 myString {
-												'0': 'S',
-												'1': 't',
-												'2': 'a',
-												'3': 'r',
-												'4': 'W',
-												'5': 'a',
-												'6': 'r',
-												'7': 's',
-												length: 8,
-												_value: 'StarWars',
-											 } -> 유사 배열 객체
-											 */
+	 myString {
+		'0': 'S',
+		'1': 't',
+		'2': 'a',
+		'3': 'r',
+		'4': 'W',
+		'5': 'a',
+		'6': 'r',
+		'7': 's',
+		length: 8,
+		_value: 'StarWars',
+  } -> 유사 배열 객체
+*/
 ```
 
 <br />
@@ -148,12 +147,12 @@ console.log( a ); // 10
 <br />
 
 > ***객체의 관리 방식***   
-[ Fast properties in V8 ]: (https://v8.dev/blog/fast-properties)    
-[ V8 히든 클래스 이야기 ]: (https://engineering.linecorp.com/ko/blog/v8-hidden-class)   
-[ 자바스크립트 엔지의 최적화 기법(2) ]: (https://meetup.toast.com/posts/78)   
-[ How the V8 engine works? ]: (http://thibaultlaurens.github.io/javascript/2013/04/29/how-hte-v8-engine-works)   
-[ How Javascript works: inside the V8 engine + 5 tips on how to write optimized code ]: (https://blog.sessionstack.com/how-javascript-works-inside-the-v8-engine-5-tips-on-how-to-write-optimized-code-ac089e62b12e)   
-[ Breking the Javascript Speed Limit with V8 ]: (https://www.youtube.com/watch?v=UJPdhx5zTaw)   
+[Fast properties in V8]:(https://v8.dev/blog/fast-properties)    
+[V8 히든 클래스 이야기]:(https://engineering.linecorp.com/ko/blog/v8-hidden-class)   
+[자바스크립트 엔지의 최적화 기법(2)]:(https://meetup.toast.com/posts/78)   
+[How the V8 engine works?]:(http://thibaultlaurens.github.io/javascript/2013/04/29/how-hte-v8-engine-works)   
+[How Javascript works: inside the V8 engine + 5 tips on how to write optimized code]:(https://blog.sessionstack.com/how-javascript-works-inside-the-v8-engine-5-tips-on-how-to-write-optimized-code-ac089e62b12e)   
+[Breking the Javascript Speed Limit with V8]:(https://www.youtube.com/watch?v=UJPdhx5zTaw)   
 >
 
 <br />
