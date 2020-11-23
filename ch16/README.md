@@ -62,21 +62,22 @@ Object.getOwnPropertyDescriptor( spaceShip, "x-wing" );
 
 | property descriptor 의 프로퍼티 | 설명 |
 | :---: | :---: |
-| value | * 프로퍼티 값    
-					* value에 값을 할당하면, 해당 프로퍼티에 값이 할당된다. 프로퍼티가 존재하지 않으면 생성되어 값이 할당된다.
-| writable | * 프로퍼티를 읽기 전용으로 만든다.
-						 * 값은 boolean 값으로 설정한다.   
-						 	 true = 읽기 / 쓰기   
-							 false = 읽기 |
-| enumerable | * 프로퍼티가 열거가능하게 만든다.   
-							 * 값은 boolean 값으로 설정한다.   
-							   true = 열거 가능
-								 false = 열거 불가능 |
-| configurable | * 프로퍼티 재정의 가능여부   
-								 * 값은 boolean 값으로 설정한다.
-								  true = 프로퍼티의 삭제 및 프로퍼티 어트리뷰트 변경 가능
-									false = 프로퍼티의 삭제 및 프로퍼티 어트리뷰트 변경 불가능
-								 * 추가적으로, writable 이 true면, writable 설정이 가능하며, 프로퍼티 읽기 쓰기가 가능하다. |
+| value | * 프로퍼티 값 |   
+				|	* value에 값을 할당하면, 해당 프로퍼티에 값이 할당된다. 프로퍼티가 존재하지 않으면 생성되어 값이 할당된다. |
+				|
+| writable | * 프로퍼티를 읽기 전용으로 만든다. |
+					 | * 값은 boolean 값으로 설정한다. |  
+					 | 	 true = 읽기 / 쓰기 | 
+					 |	 false = 읽기 |
+| enumerable | * 프로퍼티가 열거가능하게 만든다. |  
+						 | * 값은 boolean 값으로 설정한다. |  
+						 |   true = 열거 가능 |
+						 |	 false = 열거 불가능 |
+| configurable | * 프로퍼티 재정의 가능여부 |   
+							 | * 값은 boolean 값으로 설정한다. |
+							 |  true = 프로퍼티의 삭제 및 프로퍼티 어트리뷰트 변경 가능 |
+							 |	false = 프로퍼티의 삭제 및 프로퍼티 어트리뷰트 변경 불가능 |
+							 | * 추가적으로, writable 이 true면, writable 설정이 가능하며, 프로퍼티 읽기 쓰기가 가능하다. |
 
 <br />
 
