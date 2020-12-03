@@ -110,11 +110,11 @@ class pedigree {
 	}
 }
 
-const skyWorkerPedigree = pedigree( 'SkyWorker' );
+const skyWorkerPedigree = new pedigree( 'SkyWorker' );
 
 // this 가 undefined 된다. class 는 자동으로 strick 모드로 작동되어 전역 객체를 향하지 않는다는점을 알아두자.
 
-skyWorkerPedigree( ['Anakin', 'Luke' ] );
+skyWorkerPedigree.sayNames( ['Anakin', 'Luke' ] );
 // Uncaught TypeError: Cannot read property 'lastName' of undefined
 
 
@@ -139,9 +139,9 @@ class pedigree {
 	}
 }
 
-const skyWorkerPedigree = pedigree( 'SkyWorker' );
+const skyWorkerPedigree = new pedigree( 'SkyWorker' );
 
-skyWorkerPedigree( ['Anakin', 'Luke' ] );
+skyWorkerPedigree.sayNames( ['Anakin', 'Luke' ] );
 
 ````
 
