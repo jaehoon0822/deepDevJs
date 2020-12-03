@@ -272,19 +272,19 @@ console.log( result ); // [1, 3, 4, 5 ]
 <br />
 
 >
-Rest parameter 는 마지막에 있어야 한다.
+1.Rest parameter 는 마지막에 있어야 한다.
 >
 
 <br />
 
 >
-Rest parameter 는 하나만 선언가능하다.
+2.Rest parameter 는 하나만 선언가능하다.
 >
 
 <br />
 
 >
-Rest parameter 는함수 정의 시 선언한 매개변수 개수를 나타내는 함수 객체의 length 프로퍼티에 영향을 주지 않는다.
+3.Rest parameter 는함수 정의 시 선언한 매개변수 개수를 나타내는 함수 객체의 length 프로퍼티에 영향을 주지 않는다.
 >
 
 <br />
