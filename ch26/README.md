@@ -105,7 +105,7 @@ class pedigree {
 	}
 	sayNames( names  ) {
 		names.forEach( function( v ) {
-				console.log( v + this.lastName );
+				console.log( `${v} ${this.lastName}` );
 		} );
 	}
 }
@@ -134,7 +134,7 @@ class pedigree {
 	}
 	sayNames( names  ) {
 		names.forEach( ( v ) => {
-				console.log( v + this.lastName );
+				console.log( `${v} ${this.lastName}` );
 		} );
 	}
 }
@@ -143,7 +143,160 @@ const skyWorkerPedigree = new pedigree( 'SkyWorker' );
 
 skyWorkerPedigree.sayNames( ['Anakin', 'Luke' ] );
 
+// Anakin Skyworker
+// Luke Skyworker
+
 ````
 
+<br />
+
+>
+***" 화살표 함수는 함수 자체의 this 바인딩을 갖지 않는다. 따라서 화살표 함수 내부에서 this를 참조함ㄴ 상위 스코프틔 this를 그대로 참조한다. 이를 lexical this 라 한다. "***
+>
+
+<br />
+
+```javascript
+
+// 책에서 화살표 함수에 대하해 bind 를 사용해 표현했다. 매우 눈에 확 들어오는 예시이다.
+
+// 화살표 함수
+() => this.x;
+
+// bind native method로 this 바인드
+( function() { return this.x; } ).bind( this );
+
+// 화살표 함수는 마치 bind method 를 사용하여 상위스코프의 this를 바인드 한것처럼 움직인다.
+
+```
+
+<br />
+
+>
+화살표 함수는 사용시 매우 조심해야 한다.    
+화살표 함수는 자신을 둘러싼 가장 가까운 함수의 this 를 바인드 한다. 그러므로, 
+자신을 둘러싼 환경이 함수가 아니라면 전역객체를 가리킨다. 이는 객체의 메소드러 화살표 함수를 할당할때도 생기는 문제이다.문제이다.
+>
+
+<br />
+
+```javascript
+
+const JEDAI = {
+	name: 'Luke',
+	sayName: () => `My name is ${this.name}.`;
+};
+
+console.log( JEDAI.sayName() );
+// My name is undefined.
+
+/* 화살표함수는 자신의 this 를 갖고 있지 않다.    
+자신의 부모 스코프에서 this 를바인딩 한다. 여기서는 상위 스코프인 Global 을 가진다.    
+그러므로 메소드로 할당하는건 좋지 않다.*/
+
+```
+
+<br />
+
+클래스에서 정의 할때는 this 바인딩에 원하는대로 바인딩 된다. 왜 그럴까?
+
+<br />
+
+```javascript
+
+class Pedigree {
+	lastName = 'SkyWorker';
+	sayNames = ( names ) => names.forEach( v => console.log( v ); ); 
+};
+
+const SkyWorkerPedigree = new Pedigree();
+
+/* 위는 다음과 같다.
+
+class Pedigree {
+	constructor() {
+		this.lastName = 'SkyWorker';	
+		this.sayNames =( names ) => names.forEach( v => console.log( v ); ); 
+	}
+}
+
+const SkyWorkerPedigree = new Pedigree(); // { lastName, sayNames }
+
+SkyWorkerPedigree.sayNames( ['Anakin', 'Luke' ] );
+
+```
+
+좋지않다. 만약 해당 class 를 연속해서 만들게 되면 중복되는 sayNames 가 계속 생겨날 것이다. 이러한 메소드는 prototype에 할당하는 것이 좋다.   
+
+그러므로, class 에서 메소드 등록시 화살표함수 보다는 메소드함수를 사용할 것을 권장한다.
+
+<br />
+
+this 외의 super 와 arguments 역시 상위 스코프의 값을 참조한다. 
+
+<br />
+
+## Rest 파라미터
+
+<br />
+
+arrow function 에서 arguments 를 사용하지 않는다면, 다른 대체 방법이 필요할 것이다. 그것이 바로 Rest parameter 이다.
+
+<br />
+
+```javascript
+
+const plusNum = ( one, ...rest ) => { 
+	// one = 1;
+	// rest = [2, 3, 4 ];
+
+  const arr = rest.map( v => v + 1 );
+	arr.unshift( one );
+	return arr;
+};
+
+const result = plusNum( 1, 2, 3, 4 );
+
+console.log( result ); // [1, 3, 4, 5 ]
+
+```
+
+<br />
+
+이는 매우 편리한것이 유사배열이 아닌 배열이기에 배열의 native method 를 쓸수 있다. 기존의 arguments 객체는 유사배열로써 배열 객체로 변환해서 사용했다. arguments 보다 더 편리한 기능이다.
+
+<br />
+
+이책에서는 몇가지 주의사항을 말해준다.   
+
+<br />
+
+>
+Rest parameter 는 마지막에 있어야 한다.
+>
+
+<br />
+
+>
+Rest parameter 는 하나만 선언가능하다.
+>
+
+<br />
+
+>
+Rest parameter 는함수 정의 시 선언한 매개변수 개수를 나타내는 함수 객체의 length 프로퍼티에 영향을 주지 않는다.
+>
+
+<br />
+
+이 주의사항만 지키면 별 다른 에러는 없다. 매우 편리하게 사용가능하다.
+
+<br />
+
+## 매개변수 기본값
+
+<br />
+
+ES6 에서는 매개변수를 초기화 할수 있다. 이는 매우 유용하며, 기존 ES5 에서는 매개변수가 없으면 undefined 였다. 귀찮게 함수 매개변수를 일일히 입력할 필요가 없어진 셈이다.
 
 <br />
