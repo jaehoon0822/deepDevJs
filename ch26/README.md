@@ -222,6 +222,8 @@ class Pedigree {
 
 const SkyWorkerPedigree = new Pedigree(); // { lastName, sayNames }
 
+*/
+
 SkyWorkerPedigree.sayNames( ['Anakin', 'Luke' ] );
 
 ```
