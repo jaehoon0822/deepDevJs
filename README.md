@@ -27,7 +27,7 @@
 - [x] CH24 클로저
 - [x] CH25 클래스
 - [x] CH26 ES6 함수의 추가 기능
-- [ ] CH27 배열
+- [x] CH27 배열
 - [ ] CH28 Number
 - [ ] CH29 Math
 - [ ] CH30 Date
