@@ -28,11 +28,11 @@
 - [x] CH25 클래스
 - [x] CH26 ES6 함수의 추가 기능
 - [x] CH27 배열
-- [ ] CH28 Number
-- [ ] CH29 Math
-- [ ] CH30 Date
-- [ ] CH31 RegExp
-- [ ] CH32 String
+- [x] CH28 Number
+- [x] CH29 Math
+- [x] CH30 Date
+- [x] CH31 RegExp
+- [x] CH32 String
 - [ ] CH33 7번째 데이터 타입 Symbol
 - [ ] CH34 이터러블
 - [ ] CH35 스프레드 문법
